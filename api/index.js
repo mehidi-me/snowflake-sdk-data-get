@@ -21,11 +21,11 @@ function getSnowflakeData() {
       if (err) return reject(err);
 
       connection.execute({
-        sqlText: `SELECT *
-    FROM DB_AMG.REPORT.V_CLICK_REVENUE_INCLUDING_INTRADAY`,
         //     sqlText: `SELECT *
-        // FROM DB_AMG.REPORT.V_CLICK_REVENUE
-        // WHERE TIMESTAMP >= DATEADD(hour, -1, CURRENT_TIMESTAMP())`,
+        // FROM DB_AMG.REPORT.V_CLICK_REVENUE_INCLUDING_INTRADAY`,
+        sqlText: `SELECT *
+    FROM DB_AMG.REPORT.V_CLICK_REVENUE_INCLUDING_INTRADAY
+        WHERE TIMESTAMP >= DATEADD(hour, -1, CURRENT_TIMESTAMP())`,
         complete: (err, stmt, rows) => {
           connection.destroy();
           if (err) return reject(err);
