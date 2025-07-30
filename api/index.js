@@ -22,7 +22,8 @@ function getSnowflakeData() {
 
       connection.execute({
         sqlText: `SELECT *
-        FROM DB_AMG.REPORT.V_CLICK_REVENUE_INCLUDING_INTRADAY`,
+FROM DB_AMG.REPORT.V_CLICK_REVENUE_INCLUDING_INTRADAY 
+ORDER BY "TIMESTAMP" DESC`,
         //     sqlText: `SELECT *
         // FROM DB_AMG.REPORT.V_CLICK_REVENUE_INCLUDING_INTRADAY
         //     WHERE TIMESTAMP >= DATEADD(hour, -1, CURRENT_TIMESTAMP())`,
